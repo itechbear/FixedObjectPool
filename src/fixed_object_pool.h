@@ -15,7 +15,7 @@ class FixedObjectPoolDelegate;
 
 template <typename T>
 class FixedObjectPool {
- public:
+ private:
   static FixedObjectPool *CreatePool(size_t size) {
     FixedObjectPool *pool = new FixedObjectPool(size);
 
@@ -61,7 +61,6 @@ class FixedObjectPool {
     return true;
   }
 
- private:
   FixedObjectPool(size_t core_size)
       : core_size_(core_size), stack_(),
         mutex_(), cond_var_() {

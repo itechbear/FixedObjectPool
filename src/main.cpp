@@ -6,7 +6,7 @@ using namespace std;
 
 class Work {
  public:
-  Work() {}
+  Work() { std::cout << "created!" << std::endl; }
   ~Work() { std::cout << "destructed!" << std::endl; }
 
   bool Run(int a, int b) {
